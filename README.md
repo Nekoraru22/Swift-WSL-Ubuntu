@@ -5,7 +5,18 @@ wsl --install
 
 Este comando habilitará las características necesarias para ejecutar WSL e instalará la distribución Ubuntu de Linux.
 
-Para más información: https://learn.microsoft.com/es-es/windows/wsl/install
+Es importante saber que para ejecutar este comando es necesario tener habilitada la [virtualización en la BIOS del equipo](https://youtu.be/zDKlht-4L2U) y que el equipo debe tener instalada la versión 1903 o superior de Windows 10.
+
+**Aunque no suele ser necesario**, en algunos casos será necesario habilitar la característica de Windows Subsystem for Linux en Windows 10. Para ello debes abrir PowerShell como administrador y ejecutar el comando:
+```powershell
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+```
+ o buscar la característica en el panel de control de Windows y habilitarla desde ahí:
+
+![alt text](imgs/9.png)
+![alt text](imgs/10.png)
+
+Para más información sobre la instalación de WSL puedes consultar la [documentación oficial](https://docs.microsoft.com/es-es/windows/wsl/install-win10).
 
 # Instalar Ubuntu 22.04 LTS
 En algunos casos este paso no es necesario porque el comando `wsl --install` a veces instala Ubuntu 22.04 LTS, pero en otros casos instala Ubuntu 20.04 LTS.
